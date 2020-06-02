@@ -2,7 +2,7 @@
 #
 # Copyright 2010-2017 Sarosys LLC <http://www.sarosys.com>
 
-build_script_tarball="https://github.com/Arachni/build-scripts/tarball/master"
+build_script_tarball="https://github.com/hixss/build-scripts/tarball/master"
 
 if [ -z "$ARACHNI_BUILD_DIR" ]; then
     build_dir="arachni-build-dir"
