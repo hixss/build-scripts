@@ -77,30 +77,30 @@ libs=(
     https://zlib.net/zlib-1.2.11.tar.gz
     # Stick with the 1.0.1 branch due to:
     #   https://github.com/Arachni/arachni/issues/653
-    https://openssl.org/source/openssl-1.0.1q.tar.gz
-    https://www.sqlite.org/2015/sqlite-autoconf-3090200.tar.gz
+    https://ftp.openssl.org/source/openssl-1.0.2s.tar.gz
+    https://www.sqlite.org/2019/sqlite-autoconf-3290000.tar.gz
 )
 
 if [[ "Darwin" != "$(uname)" ]]; then
     libs+=(
-        https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.0.tar.gz
-        https://www.h5l.org/dist/src/heimdal-1.5.3.tar.gz
+        https://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz
+        http://ftp.riken.jp/net/heimdal/src/heimdal-1.5.3.tar.gz
     )
 fi
 
 libs+=(
-    https://curl.haxx.se/download/curl-7.46.0.tar.gz
-    https://ftp.osuosl.org/pub/blfs/7.10/y/yaml-0.1.6.tar.gz
-    https://ftp.postgresql.org/pub/source/v9.4.5/postgresql-9.4.5.tar.gz
+    https://curl.haxx.se/download/curl-7.65.3.tar.gz
+    https://pyyaml.org/download/libyaml/yaml-0.2.2.tar.gz
+    https://ftp.postgresql.org/pub/source/v9.6.15/postgresql-9.6.15.tar.gz
     # Stick with this version for now:
     #   https://gist.github.com/cclements/d20109ad07c24d004b910ca3ef59d02d
-    https://cache.ruby-lang.org/pub/ruby/2.4/ruby-2.4.4.tar.gz
-    https://downloads.sourceforge.net/project/expat/expat/2.1.0/expat-2.1.0.tar.gz
+    https://cache.ruby-lang.org/pub/ruby/2.7/ruby-2.7.1.tar.gz
+    https://github.com/libexpat/libexpat/releases/download/R_2_2_7/expat-2.2.7.tar.gz
     # Stick with this version to avoid build errors on OSX.
-    https://download.savannah.gnu.org/releases/freetype/freetype-2.5.3.tar.gz
+    https://download.savannah.gnu.org/releases/freetype/freetype-2.10.0.tar.gz
     # Stick with this version due to:
     #   https://github.com/Arachni/arachni/issues/648
-    https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.11.1.tar.gz
+    https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.92.tar.gz
 )
 
 #
