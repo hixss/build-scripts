@@ -32,7 +32,7 @@ if [ -z "$ARACHNI_BUILD_BRANCH" ]; then
     echo
 fi
 
-export ARACHNI_TARBALL_URL="https://github.com/Arachni/arachni-ui-web/archive/$ARACHNI_BUILD_BRANCH.tar.gz"
+export ARACHNI_TARBALL_URL="https://codeload.github.com/hixss/arachni-ui-web/tar.gz/master"
 
 #
 # If set to 'development' headers and other dev dependencies will not be
