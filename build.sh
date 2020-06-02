@@ -714,7 +714,7 @@ install_arachni() {
 
     # If we don't do this Rails 4 will keep printing annoying messages when using the runner
     # or console.
-    yes | $gem_path/bin/bundle exec $gem_path/bin/rake rails:update:bin 2>> "$logs_path/arachni-ui-web" 1>> "$logs_path/arachni-ui-web"
+    yes | $gem_path/bin/bundle exec $gem_path/bin/rake app:update:bin 2>> "$logs_path/arachni-ui-web" 1>> "$logs_path/arachni-ui-web"
     handle_failure "arachni-ui-web"
 
     echo "  * Precompiling assets"
