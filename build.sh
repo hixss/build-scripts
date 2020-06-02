@@ -460,7 +460,7 @@ install_libs() {
 #
 get_ruby_environment() {
 
-    cd "$usr_path/lib/ruby/2.4.0/"
+    cd "$usr_path/lib/ruby/2.7.0/"
 
     possible_arch_dir=$(echo `uname -p`*)
     if [[ -d "$possible_arch_dir" ]]; then
@@ -476,7 +476,7 @@ get_ruby_environment() {
     fi
 
     if [[ -d "$arch_dir" ]]; then
-        platform_lib=":\$MY_RUBY_HOME/2.4.0/$arch_dir:\$MY_RUBY_HOME/site_ruby/2.4.0/$arch_dir"
+        platform_lib=":\$MY_RUBY_HOME/2.7.0/$arch_dir:\$MY_RUBY_HOME/site_ruby/2.7.0/$arch_dir"
     fi
 
     cat<<EOF
@@ -521,11 +521,11 @@ if [[ \$? -ne 0 ]] ; then
 
 fi
 
-export RUBY_VERSION; RUBY_VERSION='ruby-2.4.4'
+export RUBY_VERSION; RUBY_VERSION='ruby-2.7.1'
 export GEM_HOME; GEM_HOME="\$env_root/gems"
 export GEM_PATH; GEM_PATH="\$env_root/gems"
 export MY_RUBY_HOME; MY_RUBY_HOME="\$env_root/usr/lib/ruby"
-export RUBYLIB; RUBYLIB=\$MY_RUBY_HOME:\$MY_RUBY_HOME/site_ruby/2.4.0:\$MY_RUBY_HOME/2.4.0$platform_lib
+export RUBYLIB; RUBYLIB=\$MY_RUBY_HOME:\$MY_RUBY_HOME/site_ruby/2.7.0:\$MY_RUBY_HOME/2.7.0$platform_lib
 export IRBRC; IRBRC="\$env_root/usr/lib/ruby/.irbrc"
 
 # Arachni packages run the system in production.
@@ -620,7 +620,7 @@ prepare_ruby() {
     echo "  * Grabing SSL certificate"
     # So sick of RubyGems SSL errors, grab and install the CA Cert manually.
     cert_url="https://secure.globalsign.net/cacert/Root-R1.crt"
-    cert_directory="$system_path/usr/lib/ruby/2.4.0/rubygems/ssl_certs"
+    cert_directory="$system_path/usr/lib/ruby/2.7.0/rubygems/ssl_certs"
     cert_path="$cert_directory/R1GlobalSignRoot.crt"
 
     download $cert_url "-O $cert_path"  2>> "$logs_path/ssl_certificate" 1>> "$logs_path/ssl_certificate"
@@ -635,7 +635,7 @@ prepare_ruby() {
     handle_failure "rubygems"
 
     echo "  * Installing Bundler"
-    $usr_path/bin/gem install bundler --no-ri  --no-rdoc  2>> "$logs_path/bundler" 1>> "$logs_path/bundler"
+    $usr_path/bin/gem install bundler 2>> "$logs_path/bundler" 1>> "$logs_path/bundler"
     handle_failure "bundler"
 }
 
